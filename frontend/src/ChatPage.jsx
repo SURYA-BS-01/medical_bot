@@ -168,7 +168,7 @@ const ChatPage = () => {
     const testBackendConnection = async () => {
       try {
         // Make a simple request to test connectivity
-        const testResponse = await fetch('http://localhost:8000/chat', {
+        const testResponse = await fetch('https://medbot-bknd.onrender.com/chat', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -298,7 +298,7 @@ const ChatPage = () => {
       const isFirstMessage = currentStep === 'start' && messageCount === 0;
       
       // Use fetchWithAuth instead of fetch
-      const response = await fetchWithAuth('http://localhost:8000/chat', {
+      const response = await fetchWithAuth('https://medbot-bknd.onrender.com/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -418,7 +418,7 @@ const ChatPage = () => {
   
   const fetchUserData = async () => {
     try {
-      const response = await fetchWithAuth(`http://localhost:8000/user/${userId}`);
+      const response = await fetchWithAuth(`https://medbot-bknd.onrender.com/user/${userId}`);
       if (response.ok) {
         const data = await response.json();
         console.log('User data:', data);
@@ -468,7 +468,7 @@ const ChatPage = () => {
     const resetBackendState = async () => {
       try {
         // Request complete reset from backend
-        const response = await fetchWithAuth('http://localhost:8000/force_diagnosis', {
+        const response = await fetchWithAuth('https://medbot-bknd.onrender.com/force_diagnosis', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -528,7 +528,7 @@ const ChatPage = () => {
       }]);
 
       // Make a special request to generate the summary
-      const response = await fetchWithAuth('http://localhost:8000/generate_summary', {
+      const response = await fetchWithAuth('https://medbot-bknd.onrender.com/generate_summary', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -592,7 +592,7 @@ const ChatPage = () => {
   // Function to save chat history to backend
   const saveChatHistoryToBackend = async (historyEntry) => {
     try {
-      const response = await fetchWithAuth('http://localhost:8000/save_chat_history', {
+      const response = await fetchWithAuth('https://medbot-bknd.onrender.com/save_chat_history', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -757,7 +757,7 @@ const ChatPage = () => {
       const isEarlyStage = messageCount < 3 || currentStep === 'start';
 
       // Send a continuation request - using fetchWithAuth instead of fetch
-      const response = await fetchWithAuth('http://localhost:8000/chat', {
+      const response = await fetchWithAuth('https://medbot-bknd.onrender.com/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -891,7 +891,7 @@ const ChatPage = () => {
       }]);
 
       // Request diagnosis - using fetchWithAuth instead of fetch
-      const response = await fetchWithAuth('http://localhost:8000/force_diagnosis', {
+      const response = await fetchWithAuth('https://medbot-bknd.onrender.com/force_diagnosis', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1092,7 +1092,7 @@ const ChatPage = () => {
   // Update the fetchChatHistory function to filter duplicates
   const fetchChatHistory = async (userId) => {
     try {
-      const response = await fetchWithAuth(`http://localhost:8000/chat_history/${userId}`);
+      const response = await fetchWithAuth(`https://medbot-bknd.onrender.com/chat_history/${userId}`);
       
       if (response.ok) {
         const data = await response.json();
@@ -1249,7 +1249,7 @@ const ChatPage = () => {
     
     try {
       // Use the backend endpoint to get the full summary
-      const response = await fetchWithAuth(`http://localhost:8000/view_summary/${userId}/${summaryEntry.id}`);
+      const response = await fetchWithAuth(`https://medbot-bknd.onrender.com/view_summary/${userId}/${summaryEntry.id}`);
       
       if (response.ok) {
         const data = await response.json();
