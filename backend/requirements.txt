@@ -33,7 +33,7 @@ pydantic==2.11.0
 pydantic_core==2.33.0
 pymongo==4.11.3
 python-dotenv==1.1.0
-python-json
+python-jose==3.3.0
 pointer
 python-multipart==0.0.20
 PyYAML==6.0.2
