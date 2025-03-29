@@ -43,7 +43,7 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://medbot-dc8e.onrender.com/"],  # Allows all origins
+    allow_origins=["https://medbot-dc8e.onrender.com", "https://medbot-bknd.onrender.com", "http://localhost:3000", "http://localhost:5173"],  # Added more origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
